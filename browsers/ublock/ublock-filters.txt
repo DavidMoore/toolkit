@@ -1,0 +1,53 @@
+! BLOCK SPOILERS: NRL
+nrl.com##div.draw-overview-card-team > span:nth-child(3)
+nrl.com##div.match-team__score
+nrl.com##img[alt*="Highlights"]
+nrl.com##img.card-hero__image
+nrl.com##img.content-hero-item__image
+nrl.com##img.spotlight-card__image
+nrl.com##img.spotlight__hero-image
+nrl.com##img.video-carousel-item__image
+nrl.com##.bitmovinplayer-poster
+nrl.com##div.match-team__score
+nrl.com##div.playlist__thumbnail > img
+
+! Block right-click hijack for WhatsApp Web
+web.whatsapp.com/##+js(aeld, contextmenu)
+web.whatsapp.com/##+js(aopr, document.oncontextmenu)
+
+! TIK-TOK
+
+! Prevent looping the video after it's finished playing
+tiktok.com##+js(aeld, ended)
+
+! Prevent hijacking right-click menu
+tiktok.com##+js(aeld, contextmenu, preventDefault)
+
+! Enable the browser video controls
+tiktok.com##+js(set-attr, video, controls)
+
+! Prevent stopping the video when switching tabs or apps
+tiktok.com##+js(aeld, visibilitychange)
+!tiktok.com##+js(aeld, blur)
+!tiktok.com##+js(set, document.hidden, false)
+!tiktok.com##+js(set, document.visibilityState, 'visible')
+
+! Block custom video controls
+tiktok.com##div[class*="-DivVideoSwiperControlContainer"]
+
+!||tiktok.com^$removeparam=_r
+!||tiktok.com^$removeparam=_t
+
+! INSTAGRAM
+
+! Hide overlays that prevent right-click on images
+instagram.com##div._aagw 
+
+! Enable video controls, prevent looping, prevent pausing if you tab away, block overlay
+instagram.com/##+js(aeld, contextmenu, preventDefault)
+instagram.com##div[data-instancekey]
+instagram.com##+js(set-attr, video, controls)
+instagram.com##+js(aeld, ended)
+instagram.com##+js(aeld, visibilitychange)
+
+
